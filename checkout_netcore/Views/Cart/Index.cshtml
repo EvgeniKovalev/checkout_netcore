@@ -1,3 +1,27 @@
-﻿<div>
-  HEO
-</div>
+﻿@model checkout_netcore.Models.Order
+
+@using (Html.BeginForm("StartTransaction", "Cart", FormMethod.Post))
+{
+  @Html.AntiForgeryToken()
+
+  <div class="cntr">
+    @Html.Partial("OrderDetailsPartial", Model)
+    <hr />
+
+    @Html.Partial("ItemListPartial", Model)
+    <hr />
+    <b>
+      Total
+      <span style="float:right">
+        @Html.EditorFor(model => model.amount)<br />
+        @Html.EditorFor(model => model.currency)
+      </span>
+    </b>
+  </div>
+
+  <div class="cntr greyb">
+    @Html.Partial("DeliveryPartial", Model)
+    <br />
+    <input type="submit" value="Order items" />
+  </div>
+}

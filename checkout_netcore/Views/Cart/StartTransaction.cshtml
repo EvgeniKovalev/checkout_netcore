@@ -1,0 +1,16 @@
+﻿@model checkout_netcore.Models.PaymentTransaction
+
+<h3>Transaction id: @Model.transactionId</h3>
+
+@foreach (var provider in Model.providers)
+{
+  <form method="POST" action="@provider.url" class="cntr">
+    @foreach (var parameter in provider.parameters)
+    {
+      <input type="hidden" name="@parameter.name" value="@parameter.value" />
+    }
+    <button class="paymentbtn">
+      <img src="@provider.icon" />
+    </button>
+  </form>
+}

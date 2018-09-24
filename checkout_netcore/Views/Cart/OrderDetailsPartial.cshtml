@@ -1,0 +1,17 @@
+﻿@model checkout_netcore.Models.Order
+
+<h3>Order details</h3>
+<table class="tbl">
+  <tr>
+    <th>Stamp</th>
+    <th>Reference</th>
+    <th>Currency</th>
+    <th>Language</th>
+  </tr>
+  <tr>
+    <td>@Html.EditorFor(model => model.stamp)</td>
+    <td>@Html.EditorFor(model => model.reference)</td>
+    <td>@Html.EditorFor(model => model.currency)</td>
+    <td>@Html.EditorFor(model => model.language)</td>
+  </tr>
+</table>

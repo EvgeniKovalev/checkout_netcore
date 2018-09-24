@@ -1,0 +1,38 @@
+﻿@model checkout_netcore.Models.Order
+
+<h3>User information</h3>
+
+<div class="formrow">
+  <label>Email</label><br />
+  @Html.EditorFor(model => model.customer.email)
+</div>
+
+<div class="formrow">
+  <label>Street address</label><br />
+  @Html.EditorFor(model => model.deliveryAddress.streetAddress)
+</div>
+
+<div class="formrow">
+  <label>Postal code</label><br />
+  @Html.EditorFor(model => model.deliveryAddress.postalCode)
+</div>
+
+<div class="formrow">
+  <label>City</label><br />
+  @Html.EditorFor(model => model.deliveryAddress.city)
+</div>
+
+<div class="formrow">
+  <label>Country</label><br />
+  @Html.EditorFor(model => model.deliveryAddress.country)
+</div>
+
+<div class="formrow">
+  <label>Url passed</label><br />
+  @Html.EditorFor(model => model.redirectUrls.success)
+</div>
+
+<div class="formrow">
+  <label>Url cancelled</label><br />
+  @Html.EditorFor(model => model.redirectUrls.cancel)
+</div>

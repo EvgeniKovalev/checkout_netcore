@@ -59,9 +59,8 @@ namespace checkout_netcore
       var hmac = string.Empty;
       if (!string.IsNullOrEmpty(key) && !string.IsNullOrEmpty(message))
       {
-        var encoding = new ASCIIEncoding();
-        var keyBytes = encoding.GetBytes(key);
-        var messageBytes = encoding.GetBytes(message);
+        var keyBytes = Encoding.UTF8.GetBytes(key);
+        var messageBytes = Encoding.UTF8.GetBytes(message);
 
         var hash = new HMACSHA256(keyBytes);
         byte[] hs = hash.ComputeHash(messageBytes);

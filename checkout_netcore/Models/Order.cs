@@ -12,7 +12,7 @@ namespace checkout_netcore.Models
     public List<Item> items { get; set; } = new List<Item>();
     public Customer customer { get; set; } = new Customer();
     public PostAddress deliveryAddress { get; set; } = new PostAddress();
-    public ChCallbackUrl redirectUrls { get; set; } = new ChCallbackUrl();
+    public UrlPair redirectUrls { get; set; } = new UrlPair();
 
     public Order() { }
   }

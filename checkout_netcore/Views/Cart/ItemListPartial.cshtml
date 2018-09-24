@@ -1,0 +1,22 @@
+﻿@model checkout_netcore.Models.Order
+
+<h3>Cart items</h3>
+<table class="tbl">
+  <tr>
+    <th>Product code</th>
+    <th>Delivery date</th>
+    <th>Unit price</th>
+    <th>VAT%</th>
+    <th>Units</th>
+  </tr>
+  @for (int i = 0; i < Model.items.Count; i++)
+  {
+    <tr>
+      <td>@Html.EditorFor(model => model.items[i].productCode)</td>
+      <td>@Html.EditorFor(model => model.items[i].deliveryDate)</td>
+      <td>@Html.EditorFor(model => model.items[i].unitPrice)</td>
+      <td>@Html.EditorFor(model => model.items[i].vatPercentage)</td>
+      <td>@Html.EditorFor(model => model.items[i].units)</td>
+    </tr>
+  }
+</table>
